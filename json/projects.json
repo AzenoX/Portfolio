@@ -1,0 +1,64 @@
+{
+  "projects": {
+    "materialcolors": {
+      "title": "Material-Colors.com",
+      "description": "Sélectionnez votre couleur parmis toutes celle du Material Design et collez-la dans votre projet. Mettez-les dans vos favoris pour y accéder à la vitesse de la lumière.",
+      "img": "images/projects/materialcolors-min.jpg",
+      "url": "https://material-colors.com/"
+    },
+    "azenox": {
+      "title": "AzenoX.fr",
+      "description": "Mon site personel, tout simplement.",
+      "img": "images/projects/azenox-min.jpg",
+      "url": "https://azenox.fr/"
+    },
+    "ganeshapark": {
+      "title": "Ganeshapark",
+      "description": "Projet professionnel réalisé en une nuit avec un ami. Nous l'avons fait pour un parc d'éléphants situé en Thaïlande.",
+      "img": "images/projects/ganeshapark-min.jpg",
+      "url": "https://azenox.fr/ganeshapark.com/"
+    },
+    "playapi": {
+      "title": "Play-API.com (EN DEV)",
+      "description": "Utilisez nos APIs pour accéder aux informations de certains jeux.",
+      "img": "images/projects/play-api-min.jpg",
+      "url": "https://play-api.com/"
+    },
+    "heavenpoll": {
+      "title": "Heaven Poll",
+      "description": "HeavenPoll est un service où vous pouvez créer des sondages facilement et gratuitement. Vous pouvez ajouter une durée pour ces sondages ou les sécuriser par exemple.",
+      "img": "images/projects/heavenpoll-min.jpg",
+      "url": "https://azenox.fr/portfolio/heavenpoll.com/"
+    },
+    "mcheaven": {
+      "title": "McHeaven",
+      "description": "Site que j'ai réalisé pour le serveur Minecraft sur lequel j'ai également développé les plugins en Java.",
+      "img": "images/projects/mcheaven-min.jpg",
+      "url": "https://azenox.fr/portfolio/heavenmc/"
+    },
+    "overlan": {
+      "title": "Overlan",
+      "description": "Site de mon ancienne équipe esport.",
+      "img": "images/projects/overlan-min.jpg",
+      "url": "https://azenox.fr/portfolio/overlan-esport.fr/"
+    },
+    "burn": {
+      "title": "Burn Gaming",
+      "description": "Ce site a été créé afin de donner de la visibilité à l'équipe esport que j'avais co-créée.",
+      "img": "images/projects/burnesport-min.jpg",
+      "url": "https://azenox.fr/portfolio/burn/"
+    },
+    "sildur": {
+      "title": "Sildur",
+      "description": "Sildur's Shaders est un pack de shaders pour Minecraft. J'ai voulu refaire son site, malheureusement, il ne l'a pas conservé, pas grave :D",
+      "img": "images/projects/sildur-min.jpg",
+      "url": "https://azenox.fr/portfolio/sildur/"
+    },
+    "madagascarbrule": {
+      "title": "Madagascar Brule",
+      "description": "Mon premier projet professionnel. Ce site reprend le livre qu'a écrit la personne sur Madagascar. Il n'est malheureusement plus disponible.",
+      "img": "images/projects/madagascarbrule-min.jpg",
+      "url": "#"
+    }
+  }
+}

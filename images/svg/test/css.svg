@@ -1,0 +1,12 @@
+<svg viewBox="0 0 600 700" xmlns="http://www.w3.org/2000/svg">
+  <path
+     d="m 50,74.923059 h 500 l -50,500.000001 -200,50 -200,-50 z"
+     stroke="#1572b6"
+     stroke-width="10px"
+     fill="#1572b6" />
+  <path
+     d="m 123.63827,154.94998 h 350 l -30,350 -140,40 -140,-40 -13,-100 h 68 l 6,35 80,15 80,-15 5,-60 h -240 l -10,-75 h 250 l 5,-75 h -260"
+     stroke="#ffffff"
+     stroke-width="5px"
+     fill="#ffffff" />
+</svg>

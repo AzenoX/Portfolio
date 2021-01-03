@@ -1,0 +1,7 @@
+<svg viewBox="0 0 600 700" xmlns="http://www.w3.org/2000/svg">
+    <path d="M100,100 l 500,0 -50,500 -200,50 -200,-50z" stroke="#E34F26" stroke-width="10px" fill="#E34F26"/>
+    <path d="M100,100 l 500,0 -50,500 -200,50 -200,-50z" stroke="#fff" stroke-width="10px" fill="#fff" mask="url(#html5)"/>
+    <mask id="html5">
+        <path d="M175,175 l 350,0 -5,75 -270,0 5,75 260,0 -25,200 -140,40 -140,-40 -13,-100 68,0 6,35 80,15 80,-15 5,-60 -240,0z" stroke="white" stroke-width="5px" fill="white"/>
+    </mask>
+</svg>

@@ -1,0 +1,13 @@
+{
+    "name": "alexishayat/portfolio",
+    "authors": [
+        {
+            "name": "Alexis",
+            "email": "azen0x.alexis@gmail.com"
+        }
+    ],
+    "require": {
+        "php-curl-class/php-curl-class": "^8.9",
+      "ext-json": "*"
+    }
+}
