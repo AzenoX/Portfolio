@@ -7,7 +7,7 @@ use Curl\Curl;
 ?>
 
 <!doctype html>
-<html lang="fr">
+<html lang="en">
 
 <head>
     <meta charset="UTF-8">
