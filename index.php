@@ -444,7 +444,7 @@ use Curl\Curl;
 
 <!--<script src="js/Typed.js"></script>-->
 <script src="js/Typed.js"></script>
-<script src="imports/particles.js-master/particles.min.js"></script>
+<script src="imports/particles.js-master/particles.js"></script>
 <script src="js/particlesJS.js"></script>
 
 <script src="js/globalFunctions.js"></script>
