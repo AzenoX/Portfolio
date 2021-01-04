@@ -25,7 +25,7 @@ use Curl\Curl;
     <meta name="theme-color" content="#ffffff">
 
 
-    <title>Alexis Hayat - Mon super beau Portfolio</title>
+    <title>Alexis Hayat - Mon incroyable super beau Portfolio</title>
 
 
     <link rel="stylesheet" href="scss/style.min.css">
