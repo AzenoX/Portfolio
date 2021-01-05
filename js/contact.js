@@ -1,13 +1,19 @@
 let form = document.querySelector("#contactForm");
 form.addEventListener("submit", function(e){
     e.preventDefault();
-    let data = new FormData(form);
 
-    console.log(data);
+    let email = document.querySelector("#email").value;
+    let subject = document.querySelector("#subject").value;
+    let message = document.querySelector("#message").value;
 
-    // fetch("../php/sendMail.php",
-    //     {
-    //         body: data,
-    //         method: "post"
-    //     });
+    fetch("../php/sendMail.php",
+        {
+            body: {
+                email: email,
+                subject: subject,
+                message: message,
+                submit: "submit"
+            },
+            method: "post"
+        }).then(() => console.log("Mail Sent !"));
 })
