@@ -1,6 +1,6 @@
 <?php
 
-require('classes/Mail.php');
+require('../classes/Mail.php');
 
 use App\Mail;
 
