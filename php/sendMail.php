@@ -10,7 +10,7 @@ if(isset($_POST['submit'])){
     $subject = htmlspecialchars($_POST['subject']);
     $message = htmlspecialchars($_POST['message']);
 
-    $mail = new Mail(false);
+    $mail = new Mail(true);
     $mail->setDest("azen0x.alexis@gmail.com", "Alexis")
         ->setSubject("Portfolio >> " . $subject)
         ->setText($message)
