@@ -126,7 +126,7 @@ $text-color: rgba($base-color, .8);
     fill: transparent;
     opacity: 0;
 
-    animation: fill 2s ease-out forwards 2s, opacity 2s ease-out forwards;
+    animation: fill 2s ease-out forwards 2s 1, opacity 2s ease-out forwards;
 
     path{
         stroke-dasharray: 1000px;

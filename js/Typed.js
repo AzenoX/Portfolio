@@ -1,33 +1,33 @@
 class Typed{
 
-    #timeline;
+    _timeline;
 
-    #blink;
-    #printErrors;
-    #blinkClasses;
-    #blinkSpeed;
+    _blink;
+    _printErrors;
+    _blinkClasses;
+    _blinkSpeed;
 
-    #isWriting;
+    _isWriting;
 
     constructor(el, options = {}) {
         this.el = el;
-        this.#timeline = [];
+        this._timeline = [];
 
 
         //Blink - default: true
-        this.#blink = ('blink' in options) ? options.blink : true;
+        this._blink = ('blink' in options) ? options.blink : true;
 
         //Print Errors - default: false
-        this.#printErrors = ('printErrors' in options) ? options.printErrors : false;
+        this._printErrors = ('printErrors' in options) ? options.printErrors : false;
 
         //Blink Classes - default: []
-        this.#blinkClasses = ('blinkClasses' in options) ? options.blinkClasses : [];
+        this._blinkClasses = ('blinkClasses' in options) ? options.blinkClasses : [];
 
         //Blink Speed - default: 600
-        this.#blinkSpeed = ('blinkSpeed' in options) ? options.blinkSpeed : 600;
+        this._blinkSpeed = ('blinkSpeed' in options) ? options.blinkSpeed : 600;
 
 
-        this.#isWriting = false;
+        this._isWriting = false;
 
         this.el.innerText = "";
 
@@ -35,24 +35,24 @@ class Typed{
     }
 
 
-    #_startBlink(){
+    __startBlink(){
         let span = document.createElement("span");
-        for (const cl in this.#blinkClasses){
-            if(this.#blinkClasses.hasOwnProperty(cl)){
-                span.classList.add(this.#blinkClasses[cl]);
+        for (const cl in this._blinkClasses){
+            if(this._blinkClasses.hasOwnProperty(cl)){
+                span.classList.add(this._blinkClasses[cl]);
             }
         }
         span.innerText = '|';
         this.el.appendChild(span);
 
         let interval = setInterval(() => {
-            if(this.#isWriting === true){
+            if(this._isWriting === true){
                 span.style.opacity = "1";
             }
             else{
                 span.style.opacity = (span.style.opacity === "0") ? "1" : "0";
             }
-        }, this.#blinkSpeed);
+        }, this._blinkSpeed);
     }
 
     /*
@@ -60,7 +60,7 @@ class Typed{
     * style: {color: "red",fontWeight:bold}
     * */
 
-    #_type(el, str, style = {}, delay){
+    __type(el, str, style = {}, delay){
         return new Promise((resolve, reject) => {
             let letters = str.split('');
             let counter = 0;
@@ -71,7 +71,7 @@ class Typed{
             }
 
             let interval = setInterval(() => {
-                this.#isWriting = true;
+                this._isWriting = true;
                 let element = document.createElement("span");
 
                 //Apply styles
@@ -88,7 +88,7 @@ class Typed{
                 //Increment and check the end
                 counter++;
                 if(counter >= letters.length){
-                    this.#isWriting = false;
+                    this._isWriting = false;
                     resolve();
                     clearInterval(interval);
                 }
@@ -97,7 +97,7 @@ class Typed{
 
     }
     type(str, style = {}, delay = 100){
-        this.#timeline.push("w^" + str + "///" + JSON.stringify(style) + "///" + delay);
+        this._timeline.push("w^" + str + "///" + JSON.stringify(style) + "///" + delay);
 
         return this;
     }
@@ -106,11 +106,11 @@ class Typed{
     /*
     * delay: Integer (milliseconds)
     * */
-    #_pause(delay){
+    __pause(delay){
         return new Promise(resolve => setTimeout(resolve, delay));
     }
     pause(delay){
-        this.#timeline.push("p^" + delay);
+        this._timeline.push("p^" + delay);
 
         return this;
     }
@@ -120,11 +120,11 @@ class Typed{
     * length: Integer
     * delay: Integer (milliseconds)
     * */
-    #_delete(el, length, delay){
+    __delete(el, length, delay){
         return new Promise((resolve) => {
             let counter = 0;
             let interval = setInterval(() => {
-                this.#isWriting = true;
+                this._isWriting = true;
 
                 //Remove last char
                 el.removeChild(el.lastChild);
@@ -132,7 +132,7 @@ class Typed{
                 //Increment and check the end of the loop
                 counter++;
                 if(counter > length){
-                    this.#isWriting = false;
+                    this._isWriting = false;
                     resolve();
                     clearInterval(interval);
                 }
@@ -140,27 +140,27 @@ class Typed{
         })
     }
     delete(length, delay = 100){
-        this.#timeline.push("d^" + length + "/" + delay);
+        this._timeline.push("d^" + length + "/" + delay);
 
         return this;
     }
 
 
 
-    #start(){
+    _start(){
         return new Promise((resolve) => {
             setTimeout(async () => {
                 let span = document.createElement("span");
                 this.el.appendChild(span);
 
-                if(this.#blink){
-                    this.#_startBlink();
+                if(this._blink){
+                    this.__startBlink();
                 }
 
-                for (const instruction in this.#timeline){
-                    if(this.#timeline.hasOwnProperty(instruction)){
-                        const action = this.#timeline[instruction].split('^')[0];
-                        const value = this.#timeline[instruction].split('^')[1];
+                for (const instruction in this._timeline){
+                    if(this._timeline.hasOwnProperty(instruction)){
+                        const action = this._timeline[instruction].split('^')[0];
+                        const value = this._timeline[instruction].split('^')[1];
 
                         //Write
                         if(action === "w"){
@@ -170,17 +170,17 @@ class Typed{
                             const delay = values[2];
 
                             try{
-                                await this.#_type(span, str, style, delay);
+                                await this.__type(span, str, style, delay);
                             }
                             catch(e){
-                                (this.#printErrors) ? console.log(e) : '';
+                                (this._printErrors) ? console.log(e) : '';
                                 throw e;
                             }
                         }
 
                         //Pause
                         else if(action === "p"){
-                            await this.#_pause(value);
+                            await this.__pause(value);
                         }
 
                         //Delete
@@ -189,7 +189,7 @@ class Typed{
                             const val = values[0];
                             const delay = values[1];
 
-                            await this.#_delete(span, val, delay);
+                            await this.__delete(span, val, delay);
                         }
                     }
                 }
@@ -201,10 +201,10 @@ class Typed{
 
     run(callback){
         if(callback != null){
-            this.#start().then(() => callback());
+            this._start().then(() => callback());
         }
         else{
-            this.#start();
+            this._start();
         }
     }
 

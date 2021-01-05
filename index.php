@@ -7,7 +7,7 @@ use Curl\Curl;
 ?>
 
 <!doctype html>
-<html lang="fr">
+<html lang="en">
 
 <head>
     <meta charset="UTF-8">
@@ -26,6 +26,11 @@ use Curl\Curl;
 
 
     <title>Alexis Hayat - Portfolio</title>
+
+
+    <!--Fonts-->
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono&display=swap" rel="stylesheet">
 
 
     <link rel="stylesheet" href="scss/style.min.css">
