@@ -3,6 +3,10 @@
     Skills Tabs
 
 ============================*/
+function capitalizeFirstLetter(string) {
+    return string.charAt(0).toUpperCase() + string.slice(1);
+}
+
 let skills_svg = document.querySelectorAll('.skill_icon');
 
 //Fetch skills from JSON file
@@ -22,7 +26,6 @@ fetch('json/skills.json')
 
                 let target = response.skills[name];
 
-                console.log(target);
 
 
                 title.animate({
@@ -41,7 +44,7 @@ fetch('json/skills.json')
                 let tl = gsap.timeline({defaults: {duration: 1}}),
                     svgPath = document.getElementById("skillsHtml");
                 tl.to(svgPath, {
-                    morphSVG:"#skillsCss",
+                    morphSVG:"#skills"+capitalizeFirstLetter(name),
                     fill: '#1572B6'
                 });
 
