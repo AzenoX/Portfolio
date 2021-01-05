@@ -1,11 +1,11 @@
 <?php
 
-namespace AzenoX\Utils;
+namespace App;
 
 class Vars{
 
-    public static $name = "CSGRO";
-    public static $baseurl = "https://azenox.fr/csgro.net/";
+    public static $name = "Portfolio";
+    public static $baseurl = "https://deploy.azenox.fr/";
     public static $domain = "azenox.fr";
     public static $domain_email = "contact@azenox.fr";
 

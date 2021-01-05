@@ -1,9 +1,11 @@
 <?php
 
 
-namespace AzenoX;
+namespace App;
 
-use AzenoX\Vars;
+require("Vars.php");
+
+use App\Vars;
 use PHPMailer\PHPMailer\PHPMailer;
 use PHPMailer\PHPMailer\SMTP;
 use PHPMailer\PHPMailer\Exception;
@@ -12,6 +14,7 @@ use PHPMailer\PHPMailer\Exception;
 class Mail{
 
     private $mail;
+    private $username;
     private $return;
 
 
@@ -55,6 +58,7 @@ class Mail{
 
     public function setDest($email, $username = ""){
         $this->mail->addAddress($email, $username);
+        $this->username = $username;
 
         return $this;
     }
@@ -67,7 +71,7 @@ class Mail{
     }
 
 
-    public function setText($username, $text){
+    public function setText($text){
         $this->mail->Body = '
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns:v="urn:schemas-microsoft-com:vml">
@@ -98,7 +102,7 @@ class Mail{
                                     <tr>
                                         <td style="text-align: left;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                                             <a href="http://azenox.fr/transpaws.com/" style="font-size: 40px; font-weight: bold; color: #000; text-decoration: none;">
-                                                TransPaws
+                                                Portfolio
                                             </a>
                                         </td>
                                     </tr>
@@ -112,7 +116,7 @@ class Mail{
                                         <td height="30" style="font-size: 30px;line-height: 30px;">&nbsp;</td>
                                     </tr>
                                     <tr>
-                                        <td><p style="color: #000; font-size: 20px; margin-left: 10%;">Hey '.$username.',</p></td>
+                                        <td><p style="color: #000; font-size: 20px; margin-left: 10%;">Hey '.$this->username.',</p></td>
                                     </tr>
                                     <tr>
                                         <td style="color: #333; font-size: 16px; padding-left: 10%;">'.$text.'</td>

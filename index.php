@@ -312,7 +312,7 @@ use Curl\Curl;
                 <span class="close">X</span>
             </div>
             <div id="panel-wrapper--content--jupiter" class="futurepanel__body">
-                <form method="post">
+                <form method="post" id="contactForm">
                     <div class="futureinput">
                         <label for="email">Adresse Email <span class="required">*</span></label>
                         <input type="text" id="email" name="email" placeholder="Adresse Email">
@@ -477,6 +477,7 @@ use Curl\Curl;
 <script src="js/skills.js"></script>
 <script src="js/projects.js"></script>
 <script src="js/social.js"></script>
+<script src="js/contact.js"></script>
 
 <script src="js/loader.js"></script>
 
