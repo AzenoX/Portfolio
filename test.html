@@ -19,8 +19,8 @@
 
 <!-- Animate! -->
 <script>
-    var elem = document.querySelector('.pulse');
-    var animation = elem.animate({
+    let elem = document.querySelector('.pulse');
+    let animation = elem.animate({
         opacity: [0.5, 1],
         transform: ['scale(0.5)', 'scale(1)'],
     }, {
@@ -33,18 +33,6 @@
             return console.log("Finished");
         }
     );
-
-    // Promise.all(
-    //     elem.getAnimations().map(
-    //         function(animation) {
-    //             return animation.finished
-    //         }
-    //     )
-    // ).then(
-    //     function() {
-    //         return console.log("Finished");
-    //     }
-    // );
 </script>
 
 </body>

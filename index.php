@@ -447,8 +447,8 @@ use Curl\Curl;
 </body>
 
 
-<!--<script src="js/Typed.js"></script>-->
 <script src="js/Typed.js"></script>
+<script src="https://unpkg.com/web-animations-js@2.3.2/web-animations.min.js"></script>
 <script src="imports/particles.js-master/particles.js"></script>
 <script src="js/particlesJS.js"></script>
 
