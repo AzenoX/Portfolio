@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width; initial-scale=1.0">
+    <title>Title</title>
+</head>
+
+
+<body>
+
+<!-- Include the polyfill -->
+<script src="https://unpkg.com/web-animations-js@2.3.2/web-animations.min.js"></script>
+
+<!-- Set up a target to animate -->
+<div class="pulse" style="width: 150px;">Hello world!</div>
+
+<!-- Animate! -->
+<script>
+    var elem = document.querySelector('.pulse');
+    var animation = elem.animate({
+        opacity: [0.5, 1],
+        transform: ['scale(0.5)', 'scale(1)'],
+    }, {
+        direction: 'alternate',
+        duration: 500,
+        iterations: Infinity,
+    });
+</script>
+
+</body>
+
+</html>
