@@ -17,3 +17,11 @@ if(isset($_POST['submit'])){
         ->send());
 }
 
+if(isset($_GET['t'])){
+    $mail = new Mail(true);
+    var_dump($mail->setDest("azen0x.alexis@gmail.com", "Alexis")
+        ->setSubject("Test")
+        ->setText("Coucou les gens")
+        ->send());
+}
+
