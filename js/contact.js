@@ -11,8 +11,7 @@ form.addEventListener("submit", function(e){
             body: {
                 email: email,
                 subject: subject,
-                message: message,
-                submit: "submit"
+                message: message
             },
             method: "post"
         }).then((response) => console.log(response));

@@ -10,16 +10,16 @@ require('../classes/Mail.php');
 use App\Mail;
 
 
-if(isset($_POST['submit'])){
+if(isset($_POST['email']) && isset($_POST['subject']) && isset($_POST['message'])){
     $email = htmlspecialchars($_POST['email']);
     $subject = htmlspecialchars($_POST['subject']);
     $message = htmlspecialchars($_POST['message']);
 
-    $mail = new Mail(true);
-    var_dump($mail->setDest("azen0x.alexis@gmail.com", "Alexis")
+    $mail = new Mail(false);
+    $mail->setDest("azen0x.alexis@gmail.com", "Alexis")
         ->setSubject("Portfolio >> " . $subject)
         ->setText($message)
-        ->send());
+        ->send();
 }
 
 if(isset($_GET['t'])){
