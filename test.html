@@ -27,19 +27,23 @@
         direction: 'alternate',
         duration: 500,
         iterations: 5
-    });
-
-    Promise.all(
-        elem.getAnimations().map(
-            function(animation) {
-                return animation.finished
-            }
-        )
-    ).then(
+    }).then(
         function() {
             return console.log("Finished");
         }
     );
+
+    // Promise.all(
+    //     elem.getAnimations().map(
+    //         function(animation) {
+    //             return animation.finished
+    //         }
+    //     )
+    // ).then(
+    //     function() {
+    //         return console.log("Finished");
+    //     }
+    // );
 </script>
 
 </body>
