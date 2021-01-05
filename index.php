@@ -222,8 +222,18 @@ use Curl\Curl;
                 <div id="skills--explainations">
                     <div>
                         <svg id="skills--explainations__svg" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <?php
+
+                            $i = 0;
+
+                            ?>
                             <?php foreach($skills as $skill => $value): ?>
-                                <path id="skills<?= ucfirst($skill) ?>" d="<?= $value->path ?>"/>
+                                <path id="skills<?= ucfirst($skill) ?>" d="<?= $value->path ?>" style="<?= ($i == 0) ? '' : 'display:none;' ?>"/>
+                                <?php
+                                if($i == 0){
+                                    $i = 1;
+                                }
+                                ?>
                             <?php endforeach; ?>
                         </svg>
                         <p id="skills--explainations__title">HTML</p>
