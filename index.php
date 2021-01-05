@@ -459,6 +459,7 @@ use Curl\Curl;
 </body>
 
 
+
 <script src="js/Typed.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.5.1/gsap.min.js"></script>
 <script src="GSAP/MorphSVGPlugin.min.js"></script>
