@@ -28,11 +28,13 @@ fetch('json/skills.json')
 
 
 
+                //Fadeout title and description
                 title.animate({
                     opacity: [1, 0],
                 }, {
                     duration: 500,
-                    iterations: 1
+                    iterations: 1,
+                    fill: 'forwards'
                 });
                 let animation = desc.animate({
                     opacity: [1, 0],
@@ -41,16 +43,45 @@ fetch('json/skills.json')
                     iterations: 1
                 });
 
+                //Animate SVG
                 let tl = gsap.timeline({defaults: {duration: 1}}),
                     svgPath = document.getElementById("skillsHtml");
                 tl.to(svgPath, {
                     morphSVG:"#skills"+capitalizeFirstLetter(name),
-                    fill: '#1572B6'
+                    fill: target.color
                 });
 
 
                 animation.finished.then(
                     function() {
+
+                        //Change title and reshow it
+                        title.innerText = target.title;
+                        title.animate({
+                            opacity: [0, 1],
+                        }, {
+                            duration: 500,
+                            iterations: 1,
+                            fill: 'forwards'
+                        });
+
+                        //Change description and start typewriting
+                        desc.innerText = '';
+                        desc.animate({
+                            opacity: [0, 1],
+                        }, {
+                            duration: 500,
+                            iterations: 1
+                        });
+                        new Typed(desc, {
+                            blink: true,
+                            printErrors: false,
+                            blinkClasses: ["blinker"],
+                            blinkSpeed: 600
+                        })
+                            .type(target.description, {}, 10)
+                            .run();
+
                     }
                 );
 
