@@ -15,5 +15,5 @@ form.addEventListener("submit", function(e){
                 submit: "submit"
             },
             method: "post"
-        }).then(() => console.log("Mail Sent !"));
+        }).then((response) => console.log("Mail Sent ! + " + response));
 })
