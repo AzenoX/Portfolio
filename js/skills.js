@@ -23,52 +23,89 @@ fetch('json/skills.json')
                 let target = response.skills[name];
 
 
-                let opacity = 1;
-                let fadeOut = setInterval(function(){
-
-                    skills_explainations.style.opacity = opacity + '';
 
 
-                    //Fade out
-                    opacity -= 0.05;
-                    if(opacity < 0){
-                        svg_path.setAttribute('d', target.path);
-                        svg_path.setAttribute('fill', target.color);
-                        title.innerText = target.title;
-
-                        //desc.innerText = target.description;
-
-                        desc.innerText = '';
-                        new Typed(desc, {
-                            blink: true,
-                            printErrors: false,
-                            blinkClasses: ["blinker"],
-                            blinkSpeed: 600
-                        })
-                            .type(target.description, {}, 10)
-                            .run();
+                title.animate({
+                    opacity: [1, 0],
+                }, {
+                    duration: 500,
+                    iterations: 1
+                });
+                let animation = desc.animate({
+                    opacity: [1, 0],
+                }, {
+                    duration: 500,
+                    iterations: 1
+                });
 
 
-                        opacity = 0;
-                        let fadeIn = setInterval(function(){
+                animation.finished.then(
+                    function() {
+                        let tl = gsap.timeline({defaults: {duration: 1}}),
+                            svgPath = document.getElementById("skillsHtml");
 
-                            //Fade In
-                            skills_explainations.style.opacity = Math.round(opacity) + '';
-
-
-                            //Ptite animation translate au changement
-                            svg.style.transform = 'translateX(' + ((1 - Math.round(opacity)) * 30) + '%)';
-                            title.style.transform = 'translateX(-' + ((1 - Math.round(opacity)) * 30) + '%)';
-                            desc.style.transform = 'translateY(-' + ((1 - Math.round(opacity)) * 30) + '%)';
-
-                            opacity += 0.05;
-                            if(Math.round(opacity) > 1){
-                                clearInterval(fadeIn);
-                            }
-                        },10);
-                        clearInterval(fadeOut);
+                        tl.to(svgPath, {
+                            morphSVG:"#skillsCss",
+                            fill: '#1572B6'
+                        });
                     }
-                },10);
+                );
+
+                // tl.to(html, {morphSVG:"#css"}, "+=1")
+                //     .to(html, {morphSVG:"#js"}, "+=1")
+                //     .to(html, {morphSVG:"#jquery"}, "+=1")
+                //     .to(html, {morphSVG:"#php"}, "+=1")
+                //     .to(html, {morphSVG:"#sass"}, "+=1")
+                //     .to(html, {morphSVG:"#vue"}, "+=1")
+                //     .to(html, {morphSVG:html}, "+=1");
+
+
+
+
+                // let opacity = 1;
+                // let fadeOut = setInterval(function(){
+                //
+                //     skills_explainations.style.opacity = opacity + '';
+                //
+                //
+                //     //Fade out
+                //     opacity -= 0.05;
+                //     if(opacity < 0){
+                //         svg_path.setAttribute('d', target.path);
+                //         svg_path.setAttribute('fill', target.color);
+                //         title.innerText = target.title;
+                //
+                //         desc.innerText = '';
+                //         new Typed(desc, {
+                //             blink: true,
+                //             printErrors: false,
+                //             blinkClasses: ["blinker"],
+                //             blinkSpeed: 600
+                //         })
+                //             .type(target.description, {}, 10)
+                //             .run();
+                //
+                //
+                //         opacity = 0;
+                //         let fadeIn = setInterval(function(){
+                //
+                //             //Fade In
+                //             skills_explainations.style.opacity = Math.round(opacity) + '';
+                //
+                //
+                //             //Ptite animation translate au changement
+                //             svg.style.transform = 'translateX(' + ((1 - Math.round(opacity)) * 30) + '%)';
+                //             title.style.transform = 'translateX(-' + ((1 - Math.round(opacity)) * 30) + '%)';
+                //             desc.style.transform = 'translateY(-' + ((1 - Math.round(opacity)) * 30) + '%)';
+                //
+                //             opacity += 0.05;
+                //             if(Math.round(opacity) > 1){
+                //                 clearInterval(fadeIn);
+                //             }
+                //         },10);
+                //         clearInterval(fadeOut);
+                //     }
+                // },10);
 
             });
         });
