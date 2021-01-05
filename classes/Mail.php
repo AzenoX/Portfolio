@@ -3,6 +3,7 @@
 
 namespace App;
 
+require("../vendor/autoload.php");
 require("Vars.php");
 
 use App\Vars;
