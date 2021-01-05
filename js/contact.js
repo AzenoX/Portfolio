@@ -1,7 +1,7 @@
 let form = document.querySelector("#contactForm");
 form.addEventListener("submit", function(e){
     e.preventDefault();
-    let data = new FormData(e.target);
+    let data = new FormData(form);
 
     console.log(data);
 
