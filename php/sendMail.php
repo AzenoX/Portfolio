@@ -11,9 +11,9 @@ if(isset($_POST['submit'])){
     $message = htmlspecialchars($_POST['message']);
 
     $mail = new Mail(true);
-    $mail->setDest("azen0x.alexis@gmail.com", "Alexis")
+    var_dump($mail->setDest("azen0x.alexis@gmail.com", "Alexis")
         ->setSubject("Portfolio >> " . $subject)
         ->setText($message)
-        ->send();
+        ->send());
 }
 

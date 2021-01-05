@@ -155,11 +155,11 @@ class Mail{
         try {
             $this->mail->send();
             if($this->return){
-                die("done");
+                return "done";
             }
         } catch (Exception $e) {
             if($this->return){
-                die("error");
+                return "error";
             }
         }
     }
