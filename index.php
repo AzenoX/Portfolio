@@ -222,7 +222,19 @@ use Curl\Curl;
                 <div id="skills--explainations">
                     <div>
                         <svg id="skills--explainations__svg" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M1.5 0h21l-1.91 21.563L11.977 24l-8.564-2.438L1.5 0zm7.031 9.75l-.232-2.718 10.059.003.23-2.622L5.412 4.41l.698 8.01h9.126l-.326 3.426-2.91.804-2.955-.81-.188-2.11H6.248l.33 4.171L12 19.351l5.379-1.443.744-8.157H8.531z"/>
+                            <?php
+
+                            $i = 0;
+
+                            ?>
+                            <?php foreach($skills as $skill => $value): ?>
+                                <path id="skills<?= ucfirst($skill) ?>" d="<?= $value->path ?>" style="<?= ($i == 0) ? '' : 'display:none;' ?>"/>
+                                <?php
+                                if($i == 0){
+                                    $i = 1;
+                                }
+                                ?>
+                            <?php endforeach; ?>
                         </svg>
                         <p id="skills--explainations__title">HTML</p>
                     </div>
@@ -447,8 +459,11 @@ use Curl\Curl;
 </body>
 
 
-<!--<script src="js/Typed.js"></script>-->
 <script src="js/Typed.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.5.1/gsap.min.js"></script>
+<script src="MorphSVGPlugin.min.js"></script>
+<script src="CSSRulePlugin.min.js"></script>
+<script src="https://unpkg.com/web-animations-js@2.3.2/web-animations.min.js"></script>
 <script src="imports/particles.js-master/particles.js"></script>
 <script src="js/particlesJS.js"></script>
 
