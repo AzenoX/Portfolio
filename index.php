@@ -461,8 +461,8 @@ use Curl\Curl;
 
 <script src="js/Typed.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.5.1/gsap.min.js"></script>
-<script src="MorphSVGPlugin.min.js"></script>
-<script src="CSSRulePlugin.min.js"></script>
+<script src="GSAP/MorphSVGPlugin.min.js"></script>
+<script src="GSAP/CSSRulePlugin.min.js"></script>
 <script src="https://unpkg.com/web-animations-js@2.3.2/web-animations.min.js"></script>
 <script src="imports/particles.js-master/particles.js"></script>
 <script src="js/particlesJS.js"></script>
