@@ -22,7 +22,7 @@ fetch('json/skills.json')
 
                 let target = response.skills[name];
 
-
+                console.log(target);
 
 
                 title.animate({
@@ -38,16 +38,16 @@ fetch('json/skills.json')
                     iterations: 1
                 });
 
+                let tl = gsap.timeline({defaults: {duration: 1}}),
+                    svgPath = document.getElementById("skillsHtml");
+                tl.to(svgPath, {
+                    morphSVG:"#skillsCss",
+                    fill: '#1572B6'
+                });
+
 
                 animation.finished.then(
                     function() {
-                        let tl = gsap.timeline({defaults: {duration: 1}}),
-                            svgPath = document.getElementById("skillsHtml");
-
-                        tl.to(svgPath, {
-                            morphSVG:"#skillsCss",
-                            fill: '#1572B6'
-                        });
                     }
                 );
 
