@@ -51,6 +51,7 @@ fetch('json/skills.json')
                     }
                 );
 
+
                 // tl.to(html, {morphSVG:"#css"}, "+=1")
                 //     .to(html, {morphSVG:"#js"}, "+=1")
                 //     .to(html, {morphSVG:"#jquery"}, "+=1")
