@@ -6,13 +6,10 @@ form.addEventListener("submit", function(e){
     let subject = document.querySelector("#subject").value;
     let message = document.querySelector("#message").value;
 
+
     fetch("../php/sendMail.php",
         {
-            body: {
-                email: email,
-                subject: subject,
-                message: message
-            },
+            body: `email=${email}&subject=${subject}&message=${message}`,
             method: "post"
         }).then((response) => console.log(response));
 })
