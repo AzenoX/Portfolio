@@ -14,11 +14,12 @@ form.addEventListener("submit", function(e){
     //     }).then((response) => console.log(response));
 
     let xhr = new XMLHttpRequest();
+    xhr.open("POST", "../php/sendMail.php");
+    xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
     xhr.onreadystatechange = function(){
         if(this.readyState === XMLHttpRequest.DONE && this.status === 200){
             console.log(this.responseText);
         }
     }
-    xhr.open("POST", "../php/sendMail.php");
     xhr.send("email="+email+"&subject="+subject+"&message="+message);
 })
