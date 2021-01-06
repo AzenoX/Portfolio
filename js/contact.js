@@ -16,7 +16,7 @@ form.addEventListener("submit", function(e){
     let xhr = new XMLHttpRequest();
     xhr.onreadystatechange = function(){
         if(this.readyState === XMLHttpRequest.DONE && this.status === 200){
-            console.log('Sent!');
+            console.log(this.responseText);
         }
     }
     xhr.open("POST", "../php/sendMail.php");
