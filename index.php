@@ -25,7 +25,7 @@ use Curl\Curl;
     <meta name="theme-color" content="#ffffff">
 
 
-    <title>Alexis Hayat - Portfolio</title>
+    <title>Alexis Hayat - Mon Portfolio</title>
 
 
     <!--Fonts-->
