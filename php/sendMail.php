@@ -15,11 +15,14 @@ if(isset($_POST['email']) && isset($_POST['subject']) && isset($_POST['message']
     $subject = htmlspecialchars($_POST['subject']);
     $message = htmlspecialchars($_POST['message']);
 
-    $mail = new Mail(false);
-    $mail->setDest("azen0x.alexis@gmail.com", "Alexis")
+    $mail = new Mail(true);
+    var_dump($mail->setDest("azen0x.alexis@gmail.com", "Alexis")
         ->setSubject("Portfolio >> " . $subject)
         ->setText($message)
-        ->send();
+        ->send());
+}
+else{
+    die(get_defined_vars());
 }
 
 if(isset($_GET['t'])){
