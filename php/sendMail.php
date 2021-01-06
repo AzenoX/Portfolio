@@ -22,7 +22,8 @@ if(isset($_POST['email']) && isset($_POST['subject']) && isset($_POST['message']
         ->send());
 }
 else{
-    die(get_defined_vars());
+    print_r(get_defined_vars());
+    die();
 }
 
 if(isset($_GET['t'])){
