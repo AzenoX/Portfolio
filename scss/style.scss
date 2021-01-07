@@ -164,6 +164,21 @@ $text-color: rgba($base-color, .8);
     }
 }
 
+#disappearingText{
+    position: absolute;
+    top: 10%;
+    left: 50%;
+    width: 80%;
+    transform: translateX(-50%);
+
+    font-size: 4rem;
+    font-weight: 100;
+    font-family: 'Montserrat', sans-serif;
+    color: rgba(255,255,255,0.4);
+    text-align: center;
+
+    opacity: 0;
+}
 
 $titles_resp: (
         1280: 0.8,
@@ -401,7 +416,7 @@ $titles_resp: (
     animation: sun-appear 3s ease-out 1;
 
     svg{
-        position: relative;
+        position: absolute;
 
         height: 50vh;
         width: 50vh;
@@ -409,6 +424,15 @@ $titles_resp: (
         transform: scale(1);
 
         transition: transform 2s ease-in;
+
+        &#sun-svg--death{
+            transform: scale(0);
+            transition: transform 2s ease-in;
+
+            .deathsun-laser{
+                animation: deathsun-laser 30s ease 10s forwards infinite;
+            }
+        }
 
         &.scaled{
             animation: sun-scale 2s ease-in-out alternate infinite forwards;
@@ -468,6 +492,74 @@ $titles_resp: (
 }
 @keyframes blackHole {
     
+}
+@keyframes deathsun-laser{
+    0%{
+        fill: #212121;
+    }
+    2.5%{
+        fill: #4CAF50;
+    }
+    5%{
+        fill: #212121;
+    }
+    7.5%{
+        fill: #4CAF50;
+    }
+    10%{
+        fill: #212121;
+    }
+    12.5%{
+        fill: #4CAF50;
+    }
+    13.75%{
+        fill: #212121;
+    }
+    15%{
+        fill: #4CAF50;
+    }
+    16.25%{
+        fill: #212121;
+    }
+    17.5%{
+        fill: #4CAF50;
+    }
+    18%{
+        fill: #212121;
+    }
+    18.25%{
+        fill: #4CAF50;
+    }
+    18.5%{
+        fill: #212121;
+    }
+    18.75%{
+        fill: #4CAF50;
+    }
+    19%{
+        fill: #212121;
+    }
+    19.25%{
+        fill: #4CAF50;
+    }
+    19.5%{
+        fill: #212121;
+    }
+    19.75%{
+        fill: #4CAF50;
+    }
+    20%{
+        fill: #212121;
+    }
+    20.25%{
+        fill: #4CAF50;
+    }
+    30%{
+        fill: #4CAF50;
+    }
+    35%{
+        fill: #212121;
+    }
 }
 
 /*Satellite*/
