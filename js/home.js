@@ -247,7 +247,7 @@ sun_svg.addEventListener("click", function(e){
                     setTimeout(function(){
                         document.location.reload();
                     },3000);
-                },getRandom(2000, 2500))
+                },getRandom(4000, 4500))
             },1000)
 
         },4000)
