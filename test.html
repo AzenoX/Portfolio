@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width; initial-scale=1.0">
+    <title>Title</title>
+</head>
+
+
+<body>
+
+</body>
+
+<script>
+    // "18,837,379,099,000"
+    // "143"
+
+    fetch('json/iss.json')
+        .then((response) => response = response.json())
+        .then((response) => {
+            let distance = response.distance;
+            let speed = response.speed;
+
+            setInterval(function(){
+                distance += speed;
+            },1000);
+        });
+</script>
+
+</html>
