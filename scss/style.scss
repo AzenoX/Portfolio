@@ -86,6 +86,13 @@ $text-color: rgba($base-color, .8);
         text-align: center;
         color: #fff;
 
+        opacity: 1;
+        transform: scale(0.8);
+
+        transition: opacity 0.5s ease-out;
+
+        z-index: 1;
+
     }
 }
 
@@ -111,12 +118,6 @@ $text-color: rgba($base-color, .8);
         Home Text Animation
 
 ==============================================*/
-.home__titles{
-    opacity: 1;
-    transform: scale(0.8);
-
-    transition: opacity 0.5s ease-out;
-}
 #text-name{
     position: relative;
 
@@ -163,6 +164,21 @@ $text-color: rgba($base-color, .8);
     }
 }
 
+#disappearingText{
+    position: absolute;
+    top: 10%;
+    left: 50%;
+    width: 80%;
+    transform: translateX(-50%);
+
+    font-size: 4rem;
+    font-weight: 100;
+    font-family: 'Montserrat', sans-serif;
+    color: rgba(255,255,255,0.4);
+    text-align: center;
+
+    opacity: 0;
+}
 
 $titles_resp: (
         1280: 0.8,
@@ -400,7 +416,7 @@ $titles_resp: (
     animation: sun-appear 3s ease-out 1;
 
     svg{
-        position: relative;
+        position: absolute;
 
         height: 50vh;
         width: 50vh;
@@ -408,6 +424,15 @@ $titles_resp: (
         transform: scale(1);
 
         transition: transform 2s ease-in;
+
+        &#sun-svg--death{
+            transform: scale(0);
+            transition: transform 2s ease-in;
+
+            .deathsun-laser{
+                animation: deathsun-laser 30s ease 10s forwards infinite;
+            }
+        }
 
         &.scaled{
             animation: sun-scale 2s ease-in-out alternate infinite forwards;
@@ -467,6 +492,243 @@ $titles_resp: (
 }
 @keyframes blackHole {
     
+}
+@keyframes deathsun-laser{
+    0%{
+        fill: #212121;
+    }
+    2.5%{
+        fill: #4CAF50;
+    }
+    5%{
+        fill: #212121;
+    }
+    7.5%{
+        fill: #4CAF50;
+    }
+    10%{
+        fill: #212121;
+    }
+    12.5%{
+        fill: #4CAF50;
+    }
+    13.75%{
+        fill: #212121;
+    }
+    15%{
+        fill: #4CAF50;
+    }
+    16.25%{
+        fill: #212121;
+    }
+    17.5%{
+        fill: #4CAF50;
+    }
+    18%{
+        fill: #212121;
+    }
+    18.25%{
+        fill: #4CAF50;
+    }
+    18.5%{
+        fill: #212121;
+    }
+    18.75%{
+        fill: #4CAF50;
+    }
+    19%{
+        fill: #212121;
+    }
+    19.25%{
+        fill: #4CAF50;
+    }
+    19.5%{
+        fill: #212121;
+    }
+    19.75%{
+        fill: #4CAF50;
+    }
+    20%{
+        fill: #212121;
+    }
+    20.25%{
+        fill: #4CAF50;
+    }
+    30%{
+        fill: #4CAF50;
+    }
+    35%{
+        fill: #212121;
+    }
+}
+
+/*Satellite*/
+#svgSat{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+
+
+    & > g{
+        position: absolute;
+        top: 10%;
+        left: 10%;
+        transform: translate(0,0) rotate(70deg) scale(0.15);
+
+        animation: move 180s linear backwards infinite;
+
+
+        #sat_gaz{
+            transform: scale(1,1);
+            animation: gaz 2s linear alternate infinite;
+        }
+    }
+}
+#svgShip{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+
+    & > g{
+        position: absolute;
+        top: -50vh  ;
+        left: 0;
+        transform: translate(-50%,120%) rotate(30deg) scale(0.15);
+
+        //animation: move 40s linear backwards infinite;
+
+
+        #sat_gaz{
+            transform: scale(1,1);
+            animation: gaz-ship 2s linear alternate infinite;
+        }
+    }
+}
+
+@keyframes gaz{
+    0%{
+        fill: #03A9F4;
+        transform: scale(1,1.1);
+    }
+    20%{
+        fill: #fff;
+        transform: scale(1,1);
+    }
+    40%{
+        fill: #01579B;
+        transform: scale(1,1.1);
+    }
+    60%{
+        fill: #29B6F6;
+        transform: scale(1,1);
+    }
+    80%{
+        fill: #00BCD4;
+        transform: scale(1,1);
+    }
+    100%{
+        fill: #4DD0E1;
+        transform: scale(1,1.1);
+    }
+}
+@keyframes gaz-ship{
+    0%{
+        fill: #FF9800;
+        transform: scale(1,1.1);
+    }
+    20%{
+        fill: #EF6C00;
+        transform: scale(1,1);
+    }
+    40%{
+        fill: #FF5722;
+        transform: scale(1,1.1);
+    }
+    60%{
+        fill: #F9A825;
+        transform: scale(1,1);
+    }
+    80%{
+        fill: #fff;
+        transform: scale(1,1);
+    }
+    100%{
+        fill: #FFD54F;
+        transform: scale(1,1.1);
+    }
+}
+@keyframes move{
+    0%{
+        transform: translate(-100vw,-10vh) rotate(100deg) scale(0.15);
+    }
+    20%{
+        transform: translate(100vw,30vh) rotate(100deg) scale(0.15);
+    }
+        21%{
+            transform: translate(100vw,30vh) rotate(-90deg) scale(0.15);
+        }
+    40%{
+        transform: translate(-100vw,20vh) rotate(-90deg) scale(0.2);
+    }
+        41%{
+            transform: translate(-100vw,50vh) rotate(75deg) scale(0.2);
+        }
+    60%{
+        transform: translate(50vw,-5vh) rotate(75deg) scale(0.2);
+    }
+        61%{
+            transform: translate(50vw,-5vh) rotate(190deg) scale(0.15);
+        }
+        62%{
+            transform: translate(20vw,-10vh) rotate(190deg) scale(0.15);
+        }
+    80%{
+        transform: translate(10vw,100vh) rotate(190deg) scale(0.15);
+    }
+        81%{
+            transform: translate(10vw,100vh) rotate(-40deg) scale(0.15);
+        }
+    100%{
+        transform: translate(-20vw,-10vh) rotate(-40deg) scale(0.15);
+    }
+}
+@keyframes move-ship{
+    0%{
+        transform: translate(-80vw,80vh) rotate(70deg) scale(0.15);
+    }
+    20%{
+        transform: translate(180%,10%) rotate(70deg) scale(0.15);
+    }
+        21%{
+            transform: translate(180%,10%) rotate(-102deg) scale(0.2);
+        }
+    40%{
+        transform: translate(-80%,50%) rotate(-102deg) scale(0.2);
+    }
+        41%{
+            transform: translate(-80%,30%) rotate(105deg) scale(0.2);
+        }
+    60%{
+        transform: translate(170%,90%) rotate(105deg) scale(0.2);
+    }
+        61%{
+            transform: translate(170%,90%) rotate(-30deg) scale(0.15);
+        }
+    80%{
+        transform: translate(20%,-90%) rotate(-30deg) scale(0.15);
+    }
+        81%{
+            transform: translate(20%,-90%) rotate(175deg) scale(0.15);
+        }
+    100%{
+        transform: translate(20%,160%) rotate(175deg) scale(0.15);
+    }
 }
 
 

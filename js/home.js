@@ -31,10 +31,37 @@ new Typed(subtitle_writer, {
 
 ============================*/
 let sun_svg = document.querySelector("#sun-svg");
+let sun_svg__death = document.querySelector("#sun-svg--death");
 let sun_svg__outline = document.querySelector("#sun--outline");
 let sun_svg__ellipse = document.querySelector("#sun--ellipse");
 let sun_svg__pathinside = document.querySelector("#sun--path--inside");
 let anim_steps = 0;
+let sunToggle = true;
+window.addEventListener("keyup", function(e){
+    if(e.key === "s"){
+        if(sunToggle){
+            sun_svg.style.transform = "scale(0)";
+            sun_svg__death.style.transform = "scale(1)";
+            setTimeout(function(){
+                sun_svg__death.classList.add("scaled");
+            },2000)
+
+            sunToggle = false;
+        }
+        else{
+            sun_svg.style.transform = "scale(1)";
+            sun_svg__death.style.transform = "scale(1)";
+            setTimeout(function(){
+                sun_svg__death.classList.remove("scaled");
+            },200)
+            setTimeout(function(){
+                sun_svg__death.style.transform = "scale(0)";
+            },300)
+
+            sunToggle = true;
+        }
+    }
+})
 sun_svg.addEventListener("click", function(e){
     //to white star
     if(anim_steps === 0){
@@ -133,6 +160,7 @@ sun_svg.addEventListener("click", function(e){
                     }
                 }
                 let planets = document.querySelectorAll(".menu_planet");
+                let dText = document.querySelector("#disappearingText");
 
 
                 increaseSpeed(false);
@@ -150,6 +178,21 @@ sun_svg.addEventListener("click", function(e){
                         }
                     ];
                     setTimeout(function(){
+                        dText.animate(
+                        [
+                            {
+                                opacity: '0'
+                            },
+                            {
+                                opacity: '1'
+                            }
+                        ],
+                        {
+                            duration: getRandom(200, 250),
+                            iterations: 1,
+                            fill: "forwards",
+                            easing: "ease-in-out"
+                        });
                         planet.animate(
                             animation,
                             {
@@ -204,7 +247,7 @@ sun_svg.addEventListener("click", function(e){
                     setTimeout(function(){
                         document.location.reload();
                     },3000);
-                },getRandom(2000, 2500))
+                },getRandom(4000, 4500))
             },1000)
 
         },4000)
